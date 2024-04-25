@@ -33,11 +33,12 @@ def get_data():
             cursor = conn.cursor(dictionary=True)
             query = """
                 SELECT language_name, SUM(total_issue_count) as total_issue_count, 
-                       MAX(total_repo_count) as total_repo_count, SUM(total_prs_count) as total_prs_count
+                       MAX(total_repo_count) as total_repo_count
                 FROM github_combined_data
                 WHERE language_name = %s
                 GROUP BY language_name;
             """
+            #, SUM(total_prs_count) as total_prs_count
             cursor.execute(query, (language,))
             result = cursor.fetchall()  # Fetch all results since we expect one row per language
             cursor.close()
