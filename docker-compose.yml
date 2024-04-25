@@ -1,0 +1,26 @@
+# version: '3.8'
+# services:
+#   db:
+#     image: mysql:8.0
+#     container_name: balaji-mysql
+#     environment:
+#       MYSQL_ROOT_PASSWORD: Bgmi@2023
+#       MYSQL_DATABASE: GitHub
+#     ports:
+#       - "3306:3306"
+#     volumes:
+#       - mysql-data:/var/lib/mysql
+
+#   web:
+#     build: .
+#     container_name: flaskapp-web
+#     environment:
+#       FLASK_APP: app.py
+#       FLASK_RUN_HOST: 0.0.0.0
+#     ports:
+#       - "5001:5000"
+#     depends_on:
+#       - db
+
+# volumes:
+#   mysql-data:
